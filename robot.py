@@ -1,12 +1,15 @@
 from weapon import Weapon
 
 
+
 class Robot:
-    def __init__ (self, name, health):
+
+    def __init__ (self, name,health):
         self.name = name
         self.health = health
-        self.active_weapon = Weapon("Plasma Blaster", 35)
+        self.active_weapon = Weapon("Hammer", 35)
 
-    def robot_attack(self, dinosaur):
-        self.active_weapon -= dinosaur.health
+    def attack(self, dinosaur):
+        dinosaur.health -= self.active_weapon.attack_power
+        print(f'{self.name} attacked {dinosaur.name} with {self.active_weapon.name} he has  {dinosaur.health} health remaining')
         

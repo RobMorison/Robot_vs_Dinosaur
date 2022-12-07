@@ -1,25 +1,28 @@
 from robot import Robot
 from dinosaur import Dinosaur
 
-ralph = Dinosaur("Ralph", 100, 20)
-ron = Robot("Ron", 100)
-
-print(ron.health)
-print(ralph.name)
 
 class Battlefield:
-    def __init__ (self, robot, dinosaur):
-        robot = Robot()
-        dinosaur = Dinosaur()
 
-    def run_game():
-        pass
+    def __init__ (self):
+        self.robot_one = Robot("Steve", 100)
+        self.dinosaur_one = Dinosaur("Ralphy", 100, 20) 
 
-    def display_welcome():
-        pass
+    def run_game(self): # controller functions to call all the other main functions
+        self.display_welcome()
+        self.battle_phase()
+        self.display_winner()
+        
 
-    def battle_phase():
-        pass
+    def display_welcome(self):
+        print("\nWelcome to a battle for the ages\nOnly one side can win")
 
-    def display_winner():
+    def battle_phase(self):
+        while self.robot_one.health > 0 and self.dinosaur_one.health >0:
+            self.robot_one.attack(self.dinosaur_one)
+            
+            self.dinosaur_one.attack(self.robot_one)
+            
+
+    def display_winner(self):
         pass
