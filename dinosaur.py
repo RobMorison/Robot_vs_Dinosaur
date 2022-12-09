@@ -6,4 +6,7 @@ class Dinosaur:
 
     def attack(self, robot):
         robot.health -= self.attack_power
-        print(f'{self.name} attacked leaving {robot.name} with {robot.health} health remaining')
+        if robot.health <= 0:
+            print("Robot dead")
+        else:
+            print(f'{self.name} attacked leaving {robot.name} with {robot.health} health remaining')
