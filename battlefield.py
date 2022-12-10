@@ -30,4 +30,7 @@ class Battlefield:
             
 
     def display_winner(self):
-        pass
+        if self.robot_one.health <= 0:
+            print(f'\n{self.dinosaur_one.name} has permanently turned off {self.robot_one.name}!')
+        else:
+            print(f'\n{self.robot_one.name} has made {self.dinosaur_one.name} extint!')
