@@ -20,7 +20,7 @@ class Battlefield:
     def battle_phase(self): # write to solve for stopping attacks when health is zero, righ now robot still attack with -5 health
         while self.robot_one.health > 0 and self.dinosaur_one.health > 0:
             if self.robot_one.health <= 0:
-                break
+                break # Break to get out of loop when 0 health is achieved
             else:
                 self.robot_one.attack(self.dinosaur_one)
             if self.dinosaur_one.health <= 0:
